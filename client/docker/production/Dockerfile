@@ -2,12 +2,13 @@ FROM node:14-buster-slim
 
 RUN npm install pm2 -g
 
-RUN mkdir -p /usr/local/src/project && mkdir /usr/local/src/scripts
+RUN mkdir -p /home/node/app && mkdir /home/node/app/scripts
 
-COPY ./.npmrc /usr/local/src/project
-COPY ./package*.json /usr/local/src/project/
+WORKDIR /home/node/app
 
-WORKDIR /usr/local/src/project
+COPY ./.npmrc .
+
+COPY ./package*.json .
 
 RUN apt-get autoremove -y \
   && apt-get clean -y \
@@ -19,11 +20,14 @@ COPY ./ .
 
 RUN npm run build
 
-RUN mkdir -p /var/html/www && mv dist/veterans/* /var/html/www/ && rm -rf /usr/local/src/project/
+COPY ./docker/production/scripts/ ./scripts/
 
-COPY ./docker/production/scripts/ /usr/local/src/scripts/
-WORKDIR /usr/local/src/scripts
+WORKDIR /home/node/app/scripts
+
 RUN npm install --prefer-offline --no-audit
-WORKDIR /usr/local/src/project
+
+WORKDIR /home/node/app
+
 USER node
-CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
+
+CMD [ "pm2-runtime", "start", "./scripts/ecosystem.config.js" ]
