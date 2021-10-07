@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "okidoo-boilerplate": {
+    "veterans": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/okidoo-boilerplate",
+            "outputPath": "dist/veterans",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -95,10 +95,10 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "okidoo-boilerplate:build:production"
+              "browserTarget": "veterans:build:production"
             },
             "development": {
-              "browserTarget": "okidoo-boilerplate:build:development"
+              "browserTarget": "veterans:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -106,7 +106,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "okidoo-boilerplate:build"
+            "browserTarget": "veterans:build"
           }
         },
         "test": {
@@ -140,7 +140,7 @@
       }
     }
   },
-  "defaultProject": "okidoo-boilerplate",
+  "defaultProject": "veterans",
   "cli": {
     "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
