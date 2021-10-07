@@ -9,7 +9,7 @@ WORKDIR /app
 COPY ./tsconfig*.json ./
 # Preinstall dependencies
 RUN mkdir -p ./src/app/model/
-COPY ./.npmrc ./
+COPY /home/jenkins/workspace/veterans/.npmrc ./
 COPY ./package.json ./
 COPY ./package-lock.json ./
 RUN npm install
