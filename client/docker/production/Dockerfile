@@ -17,13 +17,13 @@ RUN npm install --prefer-offline --no-audit
 
 COPY ./ .
 
-RUN npm run build:prod
+RUN npm run build
 
 RUN mkdir -p /var/html/www && mv dist/veterans/* /var/html/www/ && rm -rf /usr/local/src/project/
-
 
 COPY ./docker/production/scripts/ /usr/local/src/scripts/
 WORKDIR /usr/local/src/scripts
 RUN npm install --prefer-offline --no-audit
+WORKDIR /usr/local/src/project
 USER node
 CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
