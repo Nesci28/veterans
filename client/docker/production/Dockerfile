@@ -8,7 +8,7 @@ WORKDIR /home/node/app
 
 COPY ./.npmrc .
 
-COPY ./package*.json .
+COPY ./package*.json ./
 
 RUN apt-get autoremove -y \
   && apt-get clean -y \
