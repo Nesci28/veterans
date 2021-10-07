@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  veterans-fe:
+    image: ${COMPOSE_PROJECT_NAME}/veterans-fe
+    volumes:
+      - type: bind
+        source: ../
+        target: /home/node/app
+    command: tail -F anything

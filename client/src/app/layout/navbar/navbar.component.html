@@ -1,0 +1,81 @@
+<nav class="fixed flex items-center justify-between px-4 py-3 w-full z-10">
+  <div class="flex items-center justify-center">
+    <img src="../../../assets/logo_black.png" alt="Logo" class="logo">
+    <div class="font-bold text-2xl px-5">Veterans</div>
+  </div>
+
+  <ul class="flex items-center">
+    <li
+      [ngClass]="active[0] ? 'active' : 'not-active'"
+      class="flex justify-center items-center cursor-pointer"
+      (click)="navigate(0)"
+    >
+      <div class="flex flex-col justify-start">
+        <span [ngClass]="{ 'text-primary': !active[0] }">01</span>
+        <span>Mot du Fondateur</span>
+      </div>
+    </li>
+    <li
+      [ngClass]="active[1] ? 'active' : 'not-active'"
+      class="flex justify-center items-center cursor-pointer"
+      (click)="navigate(1)"
+    >
+      <div class="flex flex-col justify-start">
+        <span [ngClass]="{ 'text-primary': !active[1] }">02</span>
+        <span>Administration</span>
+      </div>
+    </li>
+    <li
+      [ngClass]="active[2] ? 'active' : 'not-active'"
+      class="flex justify-center items-center cursor-pointer"
+      (click)="navigate(2)"
+    >
+      <div class="flex flex-col justify-start">
+        <span [ngClass]="{ 'text-primary': !active[2] }">03</span>
+        <span>Mission Vision Valeurs</span>
+      </div>
+    </li>
+    <li
+      [ngClass]="active[3] ? 'active' : 'not-active'"
+      class="flex justify-center items-center cursor-pointer"
+      (click)="navigate(3)"
+    >
+      <div class="flex flex-col justify-start">
+        <span [ngClass]="{ 'text-primary': !active[3] }">04</span>
+        <span>Règles d'engagement</span>
+      </div>
+    </li>
+    <li
+      [ngClass]="active[4] ? 'active' : 'not-active'"
+      class="flex justify-center items-center cursor-pointer"
+      (click)="navigate(4)"
+    >
+      <div class="flex flex-col justify-start">
+        <span [ngClass]="{ 'text-primary': !active[4] }">05</span>
+        <span>Responsables régionaux</span>
+      </div>
+    </li>
+    <li
+      [ngClass]="active[5] ? 'active' : 'not-active'"
+      class="flex justify-center items-center cursor-pointer"
+      (click)="navigate(5)"
+    >
+      <div class="flex flex-col justify-start">
+        <span [ngClass]="{ 'text-primary': !active[5] }">06</span>
+        <span>Lieu des réunions</span>
+      </div>
+    </li>
+    <li
+      [ngClass]="active[6] ? 'active' : 'not-active'"
+      class="flex justify-center items-center cursor-pointer"
+      (click)="navigate(6)"
+    >
+      <div class="flex flex-col justify-start">
+        <span [ngClass]="{ 'text-primary': !active[6] }">07</span>
+        <span>Besoin d'aide</span>
+      </div>
+    </li>
+  </ul>
+
+  <button mat-stroked-button color="primary" (click)="askToJoin()">Demande d'adhésion</button>
+</nav>

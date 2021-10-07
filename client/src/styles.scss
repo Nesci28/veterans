@@ -1,0 +1,13 @@
+@import "./scss/tailwind.scss";
+*:focus {
+  outline: 0 !important;
+}
+
+@import "./scss/material/material";
+@import "./scss/custom/global";
+@import "./scss/font/fonts.scss";
+
+// Override
+.carousel-arrow {
+  z-index: 2;
+}

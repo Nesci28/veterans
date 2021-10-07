@@ -1,0 +1,23 @@
+ul > li {
+  zoom: 1;
+  padding: 0 1rem;
+  border-radius: 5px;
+  width: 104px;
+  max-width: 104px;
+  height: 86px;
+}
+
+.logo {
+  max-height: 100px;
+  width: auto;
+}
+
+.active {
+  background: #2b5332;
+  color: white;
+}
+
+.not-active {
+  background: rgba(43, 83, 50, 0.25);
+  color: white;
+}

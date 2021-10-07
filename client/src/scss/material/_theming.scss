@@ -1,0 +1,15 @@
+@use './classes-generator' as classGenerator;
+
+@import "~@angular/material/theming";
+@include mat-core($fontConfig);
+
+// Auto theme loader
+$themes: ();
+@import "./themes/dark";
+@import "./themes/light";
+@each $key, $theme in $themes {
+  .#{$key} {
+    @include angular-material-color($theme);
+    @include classGenerator.generateClasses($theme);
+  }
+}

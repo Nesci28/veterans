@@ -1,0 +1,24 @@
+<div class="carousel">
+  <carousel
+    [images]="imagesForSlider"
+    [objectFit]="'cover'"
+    [cellWidth]="'100%'"
+    [height]="height || 0"
+    [autoplay]="true"
+    [dots]="true"
+    [loop]="true"
+  >
+  </carousel>
+
+  <div class="overlay">
+    <!-- <h3 class="overlay-title text-uppercase underline">Pour ne jamais oublier qui nous sommes</h3> -->
+    <ngx-typed-js
+      class="mb-3"
+      [strings]="['Pour ne jamais oublier qui nous sommes']"
+      [typeSpeed]="60"
+    >
+      <h3 class="typing overlay-title underline"></h3>
+    </ngx-typed-js>
+    <p class="overlay-text mb-0">Bienvenue sur le site de Vétérans UN NATO CANADA</p>
+  </div>
+</div>

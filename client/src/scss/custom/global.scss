@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.container {
+  position: relative;
+  padding: 1rem;
+  margin: 0 auto;
+
+  @media (min-width: 1280px) {
+    padding: 1.5rem;
+  }
+}
+
+/* Mat datepicker multiple */
+.mat-calendar-body-cell.selected-calendar {
+  transition: all 250ms ease-out;
+  border-radius: 50%;
+  .mat-calendar-body-cell-content {
+    transition: all 250ms ease-out;
+    color: #fff;
+    font-weight: 600;
+  }
+}
+.drop-calendar {
+  width: 30rem;
+}

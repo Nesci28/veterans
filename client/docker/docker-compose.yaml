@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  veterans-fe:
+    image: ${COMPOSE_PROJECT_NAME}/veterans-fe:${VERSION}
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    networks:
+      - veterans-fe
+    expose:
+      - 4200
+
+networks:
+  veterans-fe:
