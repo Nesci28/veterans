@@ -30,4 +30,4 @@ WORKDIR /home/node/app
 
 USER node
 
-CMD [ "pm2-runtime", "start", "./scripts/ecosystem.config.js" ]
+CMD [ "pm2-runtime", "start", "/home/node/app/scripts/ecosystem.config.js" ]
